@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strzelnica - gra z animacją</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            background-image: radial-gradient(rgb(0, 0, 0) 5%, rgb(255, 0, 0) 5%, rgb(255, 0, 0) 12%, rgb(0, 255, 0) 12%, rgb(0, 255, 0) 19%, rgb(255, 255, 255) 19%);
+        }
+
+        div {
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            background-color: gray;
+            animation:
+                move 5s infinite linear alternate,
+                shake 0.5s infinite linear alternate;
+        }
+
+        button {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+            font-size: 30px;
+            border: 2px solid black;
+            padding: 10px 20px;
+
+        }
+
+        button:hover+div {
+            animation-play-state: paused;
+        }
+
+        @keyframes move {
+            0% {
+                top: 15%;
+                left: 15%;
+            }
+
+            10% {
+                top: 25%;
+                left: 85%;
+            }
+
+            20% {
+                top: 45%;
+                left: 25%;
+            }
+
+            30% {
+                top: 15%;
+                left: 90%;
+            }
+
+            40% {
+                top: 55%;
+                left: 15%;
+            }
+
+            50% {
+                top: 35%;
+                left: 55%;
+            }
+
+            60% {
+                top: 75%;
+                left: 5%;
+            }
+
+            70% {
+                top: 45%;
+                left: 65%;
+            }
+
+            80% {
+                top: 55%;
+                left: 15%;
+            }
+
+            90% {
+                top: 75%;
+                left: 60%;
+            }
+
+            100% {
+                top: 80%;
+                left: 80%;
+            }
+        }
+
+        @keyframes shake {
+            0% {}
+
+            10% {
+                transform: translate(5%, 5%);
+            }
+
+            20% {
+                transform: translate(75%, -65%);
+            }
+
+            30% {
+                transform: translate(-50%, 85%);
+            }
+
+            40% {
+                transform: translate(55%, -55%);
+            }
+
+            50% {
+                transform: translate(-95%, 95%);
+            }
+
+            60% {
+                transform: translate(60%, -15%);
+            }
+
+            70% {
+                transform: translate(-25%, 65%);
+            }
+
+            80% {
+                transform: translate(-95%, -65%);
+            }
+
+            90% {
+                transform: translate(20%, 25%);
+            }
+
+            100% {
+                transform: translate(-55%, -55%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>Stop</button>
+    <div></div>
+</body>
+
+</html>
